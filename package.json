@@ -1,33 +1,55 @@
 {
-	"name" : "mimetype",
-	"version" : "0.0.8",
-	"description" : "A mime type catalog driven by filename extensions.",
-    "license": "BSD-2-Clause",
-	"main" : "./mimetype.js",
-	"repository" : {
-		"type" : "git", 
-		"url" : "https://github.com/rsdoiel/mimetype-js.git"
-	},
-	"author" : {
-		"name" : "R. S. Doiel", 
-		"email" : "rsdoiel@gmail.com", 
-		"url" : "https://github.com/rsdoiel"
-	},
-	"maintainers" : [{
-		"name" : "R. S. Doiel", 
-		"url" : "https://github.com/rsdoiel"
-	}],
-	"engines" : {
-		"node" : ">= 0.8",
-		"npm" : ">= 1"
-	},
-	"devDependencies" : {
-		"yui": "3.10.x"
-	},
-	"scripts" : {
-		"test" : "node tests/mimetype_test.js"
-	},
-	"bugs": {
-		"url": "http://github.com/rsdoiel/mimetype-js/issues"
-   	}
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "mimetype-js",
+  "author": "TCLKING\\weicong.peng",
+  "module": "dist/mimetype-js.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/mimetype-js.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/mimetype-js.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.12.0",
+    "husky": "^6.0.0",
+    "size-limit": "^4.12.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.4"
+  }
 }
