@@ -32,7 +32,7 @@
     "trailingComma": "es5"
   },
   "name": "mimetype-js",
-  "author": "TCLKING\\weicong.peng",
+  "author": "Pwcong <pwcong@foxmail.com>",
   "module": "dist/mimetype-js.esm.js",
   "size-limit": [
     {
